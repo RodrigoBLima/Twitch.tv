@@ -1,12 +1,13 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import React from "react";
+import { View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import colors from './styles/colors';
+import Following from "./pages/Following";
+import CoomingSoon from "./pages/CoomingSoon";
 
-import Following from './pages/Following';
-import ComingSoon from './pages/ComingSoon';
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from "./styles/colors";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -20,8 +21,8 @@ const Routes: React.FC = () => (
           borderTopWidth: 0,
         },
         tabStyle: {
-          alignItems: 'center',
-          justifyContent: 'center',
+          alignItems: "center",
+          justifyContent: "center",
         },
         iconStyle: {
           flex: 0,
@@ -29,7 +30,7 @@ const Routes: React.FC = () => (
           height: 20,
         },
         labelStyle: {
-          fontFamily: 'roboto_400',
+          fontFamily: "roboto_400",
           fontSize: 11,
           marginTop: 5,
         },
@@ -54,7 +55,7 @@ const Routes: React.FC = () => (
       />
       <Screen
         name="Discover"
-        component={ComingSoon}
+        component={CoomingSoon}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
@@ -69,7 +70,7 @@ const Routes: React.FC = () => (
       />
       <Screen
         name="Browse"
-        component={ComingSoon}
+        component={CoomingSoon}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
@@ -84,7 +85,7 @@ const Routes: React.FC = () => (
       />
       <Screen
         name="Esports"
-        component={ComingSoon}
+        component={CoomingSoon}
         options={{
           tabBarIcon: ({ size, focused }) => {
             return (
