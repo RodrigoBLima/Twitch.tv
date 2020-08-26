@@ -16,51 +16,42 @@ interface Item {
 }
 
 const Following: React.FC = () => {
- const {data,indices} =  React.useMemo(() => {
+  const { data, indices } = React.useMemo(() => {
     const items: Item[] = [
       {
-        key: "PAGE_HEADING",
+        key: 'PAGE_HEADING',
         render: () => <Heading>Following</Heading>,
       },
+
       {
-        key: "FOLLOWED_CATEGORIES",
+        key: 'FOLLOWED_CATEGORIES',
         render: () => <Title>Followed Categories</Title>,
         isTitle: true,
       },
-      {
-        key: "c1",
-        render: () => <CategoryList />,
-      },
-      {
-        key: "LIVE_CHANNELS",
-        render: () => <Title>Live Channels</Title>,
+      { key: 'C1', render: () => <CategoryList /> },
 
+      {
+        key: 'LIVE_CHANNELS',
+        render: () => <Title>Live Channels</Title>,
         isTitle: true,
       },
+      { key: 'C2', render: () => <StreamList /> },
+
       {
-        key: "c2",
-        render: () => <StreamList />,
-      },
-      {
-        key: "CONTINUE_WATCHING",
-        render: () => <StreamList />,
+        key: 'CONTINUE_WATCHING',
+        render: () => <View />,
         isTitle: true,
       },
+      { key: 'C3', render: () => <View /> },
+
       {
-        key: "c3",
-        render: () => <StreamList />,
-      },
-      {
-        key: "OFFILINE_CHANNELS",
-        render: () => <Title>Offiline Channels</Title>,
+        key: 'OFFLINE_CHANNELS',
+        render: () => <Title>Offline Channels</Title>,
         isTitle: true,
       },
-      {
-        key: "c4",
-        render: () => <ChannelList />,
-        },
+      { key: 'C4', render: () => <ChannelList /> },
     ];
-    // indices dos elementos que são titulos
+
     const indices: number[] = [];
 
     items.forEach((item, index) => item.isTitle && indices.push(index));
@@ -70,6 +61,7 @@ const Following: React.FC = () => {
       indices,
     };
   }, []);
+
 
   return (
     <Wrapper>
